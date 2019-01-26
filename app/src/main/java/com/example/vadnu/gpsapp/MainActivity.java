@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
     static final Integer CAMERA = 0x5;
     static final Integer ACCOUNTS = 0x6;
     static final Integer GPS_SETTINGS = 0x7;
+    int x=0;
     LocationManager locationManager;
     Criteria criteria;
     GpsChecker checker;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         locationManager= (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         checker=new GpsChecker(locationManager,this,txtview);
         checker.run();
-
        criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
         criteria.setPowerRequirement(Criteria.POWER_LOW);
